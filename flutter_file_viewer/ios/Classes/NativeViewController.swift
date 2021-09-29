@@ -70,8 +70,8 @@ class NativeView: NSObject, FlutterPlatformView {
         pdfView.trailingAnchor.constraint(equalTo: _view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         pdfView.topAnchor.constraint(equalTo: _view.safeAreaLayoutGuide.topAnchor).isActive = true
         pdfView.bottomAnchor.constraint(equalTo: _view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
-        guard let path = Bundle.main.url(forResource: path, withExtension: "pdf") else { return }
+        pdfView.backgroundColor = .red
+        guard let path = Bundle.main.url(forResource: "TestPDF", withExtension: "pdf") else { return }
 
         if let document = PDFDocument(url: path) {
             pdfView.document = document
